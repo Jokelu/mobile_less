@@ -1,0 +1,62 @@
+.manage {
+  width: 100%;
+  height: 100%;
+  header {
+    height: 90px;
+    background: #213240;
+  }
+  .progress {
+    height: 3px;
+    background-color: black;
+    .value {
+      height: 3px;
+      background-color: #21a1ff;
+      width: 0;
+      transition: width 3s;
+      &.loading {
+        width: 90%;
+      }
+      &.complete {
+        width: 100%;
+      }
+    }
+  }
+  .content {
+    width: 100%;
+    height: calc(100% - 93px);
+    display: flex;
+    .asideMenu {
+      flex: 300px 0 0;
+      height: 100%;
+      overflow: auto;
+      background: #213240;
+      .el-menu {
+        border-right: none;
+        background-color: transparent;
+        .el-submenu__title i {
+          color: #fff;
+        }
+        .el-menu-item i {
+          color: #fff;
+        }
+        .el-menu-item.is-active i {
+          color: #409EFF;
+        }
+      }
+    }
+    .content-body {
+      padding: 10px 20px;
+      box-sizing: border-box;
+      height: 100%;
+      flex: 1;
+      .bread {
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+      }
+      .content-page {
+        padding-top: 20px;
+      }
+    }
+  }
+}
