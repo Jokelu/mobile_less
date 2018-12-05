@@ -1,31 +1,36 @@
 <template>
   <div class="manage">
-    
+    <button @click="show">侧边栏</button>
+    <pop v-model="showFlag"></pop>
   </div>
 </template>
 
 <script>
-import axios from "axios";
+import Pop from "@/components/pop";
 export default {
   name: "",
   data() {
     return {
+      showFlag: false
     };
   },
-  computed: {
+  components: {
+    Pop
   },
-  mounted() {
-  },
+  computed: {},
+  mounted() {},
   methods: {
-    async initData() {
-      let data = await axios.get("/static/json/menu.json");
-      if (data.statusText === "OK") {
-        this.menu = data.data.menuList
-      }
+    show() {
+      console.log(11);
+      this.showFlag = true;
     }
   }
 };
 </script>
 
 <style lang='less' rel='stylesheet/less'>
+.manage {
+  width: 100%;
+  height: 100%;
+}
 </style>
